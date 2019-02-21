@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("../../assets/fonts/LiberationSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Liberation Sans Bold";
+  src: url("../../assets/fonts/LiberationSans-Bold.ttf") format("truetype");
+}
+$border-color: rgb(153, 153, 153);
+$background-main: rgb(255, 255, 255);
+$button-color: #2fa2c3;
+
+.form {
+  width: 500px;
+  margin: 0 auto;
+}
+.header {
+  font-size: 18px;
+  margin-left: 90px;
+}
+.logo {
+  color: $button-color;
+  font-size: 41.36px;
+  font-family: "Liberation Sans Bold";
+}
+
+span {
+  & img {
+    height: 100%;
+  }
+}
+
+.login-form {
+  font-family: "Liberation Sans";
+  width: 440px;
+  height: 311px;
+  border: 1px $border-color solid;
+  border-radius: 5.51px;
+  background: $background-main;
+  opacity: 33%;
+  margin: 34px auto 0;
+  .btn--login {
+    margin-top: 40px;
+    button {
+      width: 92px;
+      height: 40px;
+      background: $button-color;
+      border-radius: 5.51px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  input {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px $border-color solid;
+    background: $background-main;
+    opacity: 28%;
+    width: 295px;
+    height: 40px;
+    display: inline-block;
+    margin: 34px auto 0;
+    letter-spacing: -0.14px;
+    color: #666;
+    padding-left: 30px;
+    &[type="submit"] {
+      margin-top: 40px;
+      font-size: 18px;
+      letter-spacing: -0.18px;
+    }
+  }
+  img {
+    height: 13px;
+    width: 13px;
+    margin-left: 7px;
+  }
+  .input-error {
+    color: #ed1f24;
+    position: absolute;
+  }
+  .form-inputs {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+  }
+  .footer {
+    font-size: 12px;
+    margin-top: 17px;
+    span {
+      color: $button-color;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  #email {
+    background: url("../../assets/img/mail.png") no-repeat scroll 7px 13px;
+  }
+  #password {
+    background: url("../../assets/img/lock.png") no-repeat scroll 7px 13px;
+  }
+}

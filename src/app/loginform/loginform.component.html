@@ -1,0 +1,66 @@
+<div class="form">
+  <div class="header">
+    <span class="logo">Bank</span> Support Portal
+  </div>
+  <form #f="ngForm" (ngSubmit)="submit(f)" class="login-form">
+    <div class="form-inputs">
+      <input
+        required
+        ngModel
+        name="email"
+        #email="ngModel"
+        id="email"
+        type="email"
+        class="form-control"
+        [disabled]="this.access"
+        placeholder="E-mail"
+      />
+      <span *ngIf="this.access" class="error">
+        <img src="../../assets/img/success.png" alt="" />
+      </span>
+      <span *ngIf="email.touched && f.controls.email.errors">
+        <img src="../../assets/img/error.png" alt="" />
+      </span>
+      <div class="input-error" *ngIf="email.touched && f.controls.email.errors">
+        <div *ngIf="f.controls.email.errors.notMatch">
+          Invalid username
+        </div>
+        <div *ngIf="f.controls.email.errors.required">
+          This field is required
+        </div>
+      </div>
+      <input
+        required
+        ngModel
+        name="password"
+        #password="ngModel"
+        id="password"
+        type="password"
+        class="form-control"
+        placeholder="password"
+        [disabled]="this.access"
+      />
+      <span *ngIf="this.access" class="error">
+        <img src="../../assets/img/success.png" alt="" />
+      </span>
+      <span *ngIf="password.touched && f.controls.password.errors">
+        <img src="../../assets/img/error.png" alt="" />
+      </span>
+      <div
+        class="input-error"
+        *ngIf="password.touched && f.controls.password.errors"
+      >
+        <div *ngIf="f.controls.password.errors.invalid">
+          Invalid password
+        </div>
+        <div *ngIf="f.controls.password.errors.required">
+          This field is required
+        </div>
+      </div>
+      <div class="btn--login">
+        <button [disabled]="!f.valid">Login</button>
+      </div>
+      <div class="footer">Forgot your password? <span>Reset it here</span></div>
+    </div>
+  </form>
+</div>
